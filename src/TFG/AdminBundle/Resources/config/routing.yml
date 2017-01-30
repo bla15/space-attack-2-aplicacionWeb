@@ -1,0 +1,3 @@
+tfg_admin_homepage:
+    path:     /hellou/{name}
+    defaults: { _controller: TFGAdminBundle:Default:index }
