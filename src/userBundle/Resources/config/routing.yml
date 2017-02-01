@@ -32,3 +32,10 @@ user_delete:
   path: /delete/{id}
   defaults: { _controller: userBundle:User:delete }
   methods: [POST, DELETE]
+
+user_redirect_add_admin:
+    path: /user/create
+    defaults:
+        _controller: userBundle:User:add
+        path: /user/add/admin
+        permanent: true
