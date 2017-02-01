@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="users")
  * @ORM\Entity(repositoryClass="userBundle\Entity\UserRepository")
+ * @ORM\HasLifecycleCallbacks()
  */
 class User
 {
@@ -27,6 +28,20 @@ class User
      * @ORM\Column(name="nick", type="string", length=50)
      */
     private $nick;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=100)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=100)
+     */
+    private $lastName;
 
     /**
      * @var string
@@ -50,11 +65,11 @@ class User
     private $role;
 
     /**
-     * @var string
+     * @var boolean
      *
-     * @ORM\Column(name="pais", type="string", length=50)
+     * @ORM\Column(name="is_active", type="boolean")
      */
-    private $pais;
+    private $isActive;
 
     /**
      * @var \DateTime
@@ -69,7 +84,6 @@ class User
      * @ORM\Column(name="updated_at", type="datetime")
      */
     private $updatedAt;
-
 
     /**
      * Get id
@@ -103,6 +117,52 @@ class User
     public function getNick()
     {
         return $this->nick;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     * @return User
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return User
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
     }
 
     /**
@@ -178,27 +238,26 @@ class User
     }
 
     /**
-     * Set pais
+     * Set isActive
      *
-     * @param string $pais
-     *
+     * @param boolean $isActive
      * @return User
      */
-    public function setPais($pais)
+    public function setIsActive($isActive)
     {
-        $this->pais = $pais;
+        $this->isActive = $isActive;
 
         return $this;
     }
 
     /**
-     * Get pais
+     * Get isActive
      *
-     * @return string
+     * @return boolean
      */
-    public function getPais()
+    public function getIsActive()
     {
-        return $this->pais;
+        return $this->isActive;
     }
 
     /**
@@ -248,5 +307,20 @@ class User
     {
         return $this->updatedAt;
     }
-}
 
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->createdAt = new \DateTime();
+    }
+    /**
+     * @ORM\PrePersist
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
+    }
+}

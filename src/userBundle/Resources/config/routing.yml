@@ -6,3 +6,29 @@ user_index:
   path: /user/index
   defaults: { _controller: userBundle:User:index }
 
+user_add_admin:
+  path: /add/admin
+  defaults: { _controller: userBundle:User:add }
+
+user_create:
+  path: /create
+  defaults: { _controller: userBundle:User:create }
+  methods: POST
+
+user_edit:
+  path: /edit/{id}
+  defaults: { _controller: userBundle:User:edit }
+
+user_update:
+  path:     /update/{id}
+  defaults: { _controller: userBundle:User:update }
+  methods: [POST, PUT]
+
+user_view:
+  path: /view/{id}
+  defaults: { _controller: userBundle:User:view }
+
+user_delete:
+  path: /delete/{id}
+  defaults: { _controller: userBundle:User:delete }
+  methods: [POST, DELETE]
