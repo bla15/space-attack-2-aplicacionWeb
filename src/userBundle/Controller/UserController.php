@@ -57,6 +57,9 @@ class UserController extends Controller
             $em->persist($user);
             $em->flush();
 
+            $successMessage = $this->get('translator')->trans('The user has been created.');
+            $this->addFlash('mensaje', $successMessage);
+
             return $this->redirectToRoute('user_index');
         }
 

@@ -2,6 +2,7 @@
 
 {% block body %}
 {{ parent() }}
+    {{ include('userBundle:User:messages/success.html.twig') }}
     <div class="container">
         <div class="col-md-12">
             <div class="page-header margin-none">
