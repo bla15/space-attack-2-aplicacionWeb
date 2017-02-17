@@ -1,0 +1,44 @@
+partida_index:
+    path:     /index
+    defaults: { _controller: userBundle:Partida:index }
+
+partida_add:
+    path:     /add
+    defaults: { _controller: userBundle:Partida:add }
+
+partida_create:
+    path:     /create
+    defaults: { _controller: userBundle:Partida:create }
+    methods:  POST
+
+partida_edit:
+    path:     /edit/{id}
+    defaults: { _controller: userBundle:Partida:edit }
+
+partida_update:
+    path:     /update/{id}
+    defaults: { _controller: userBundle:Partida:update }
+    methods:  [POST, PUT]
+
+partida_view:
+    path:     /view/{id}
+    defaults: { _controller: userBundle:Partida:view }
+
+partida_delete:
+    path:     /delete/{id}
+    defaults: { _controller: userBundle:Partida:delete }
+    methods:  [POST, DELETE]
+
+partida_redirect_add:
+    path: /create
+    defaults:
+        _controller: userBundle:Partida:add
+        path: /add
+        permanent: true
+
+partida_redirect_edit:
+    path: /update/{id}
+    defaults:
+        _controller: userBundle:Partida:edit
+        path: /edit/{id}
+        permanent: true

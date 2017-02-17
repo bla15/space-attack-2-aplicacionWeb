@@ -1,0 +1,97 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="container well">
+	    <div class="col-md-9">
+	    	<h2>{{ user.fullName }}</h2>
+	        <dl>
+	        	<dt>{{'Pilot name'|trans}}</dt>
+	        	<dd>
+	                {{ partida.nombrePiloto }}
+	                &nbsp;
+	            </dd>
+	            <br>
+	            
+	            <dt>{{'Race'|trans}}</dt>
+	        	<dd>
+	                {{ partida.raza }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Last planet'|trans}}</dt>
+	        	<dd>
+	                {{ partida.ultimoPlaneta }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Number of shots'|trans}}</dt>
+	        	<dd>
+	                {{ partida.disparos }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Dead enemies'|trans}}</dt>
+	        	<dd>
+	                {{ partida.deads }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Score'|trans}}</dt>
+	        	<dd>
+	                {{ partida.score }}%
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Operational shields'|trans}}</dt>
+	        	<dd>
+	        		
+	                {{ partida.life/2}}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Status'|trans}}</dt>
+	        	<dd>
+	             	{% if partida.status == 0 %}
+	             		{{'In progress'|trans}}
+						<span class="glyphicon glyphicon-time text-danger" title="{% trans %}Waiting{% endtrans %}" id="glyphicon-{{partida.id}}"></span>
+					{% elseif partida.status == 1 %}
+						{{'Completed mission'|trans}}
+						<span class="glyphicon glyphicon-ok text-success" title="{% trans %}Finish{% endtrans %}"></span>
+				    {% endif %}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Created'|trans}}</dt>
+	            <dd>
+	                {{ partida.createdAt|date('d-m-Y') }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	            <dt>{{'Updated'|trans}}</dt>
+	            <dd>
+	                {{ partida.updatedAt|date('d-m-Y ') }}
+	                &nbsp;
+	            </dd>
+	            <br>
+
+	        </dl>
+	    </div>
+
+	    <div class="col-md-3">
+			<h3>{{ 'Actions'|trans }}:</h3>
+			<p>
+				{{ include('userBundle:Partida:forms/form.html.twig', { form: delete_form, message: 'Are you sure ?' }) }}
+			</p>
+	    </div>
+
+	</div>
+{% endblock %}

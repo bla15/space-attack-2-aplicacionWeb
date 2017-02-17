@@ -1,41 +1,24 @@
+user_user:
+    resource: "@userBundle/Resources/config/routes/user.yml"
+    prefix:   /user
+
+partida_partida:
+    resource: "@userBundle/Resources/config/routes/partida.yml"
+    prefix:   /partida
+
+# Autentication
+
 user_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: userBundle:Default:index }
+    path:     /
+    defaults: { _controller: userBundle:User:home }
 
-user_index:
-  path: /user/index
-  defaults: { _controller: userBundle:User:index }
+user_login:
+    path:     /login
+    defaults: { _controller: userBundle:Security:login }
 
-user_add_admin:
-  path: /add/admin
-  defaults: { _controller: userBundle:User:add }
+user_login_check:
+    path:     /login_check
+    defaults: { _controller: userBundle:Security:loginCheck }
 
-user_create:
-  path: /create
-  defaults: { _controller: userBundle:User:create }
-  methods: POST
-
-user_edit:
-  path: /edit/{id}
-  defaults: { _controller: userBundle:User:edit }
-
-user_update:
-  path:     /update/{id}
-  defaults: { _controller: userBundle:User:update }
-  methods: [POST, PUT]
-
-user_view:
-  path: /view/{id}
-  defaults: { _controller: userBundle:User:view }
-
-user_delete:
-  path: /delete/{id}
-  defaults: { _controller: userBundle:User:delete }
-  methods: [POST, DELETE]
-
-user_redirect_add_admin:
-    path: /user/create
-    defaults:
-        _controller: userBundle:User:add
-        path: /user/add/admin
-        permanent: true
+user_logout:
+    path:     /logout
