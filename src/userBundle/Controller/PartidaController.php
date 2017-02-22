@@ -25,6 +25,27 @@ class PartidaController extends Controller
 
     }
 
+    public function customAction(Request $request)
+    {
+        $idUser = $this->get('security.token_storage')->getToken()->getUser()->getId();
+
+        $em  = $this->getDoctrine()->getManager();
+        $dql = "SELECT p FROM userBundle:Partida p JOIN p.user u WHERE u.id = :idUser ORDER BY p.id DESC";
+
+        $partidas = $em->createQuery($dql)->setParameter('idUser', $idUser);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $partidas,
+            $request->query->getInt('page', 1),
+            3
+        );
+
+        //$updateForm = $this->createCustomForm(':PARTIDA_ID', 'PUT', 'partida_process');
+
+        return $this->render('userBundle:Partida:custom.html.twig', array('pagination' => $pagination));
+    }
+
     public function viewAction($id)
     {
         $partida = $this->getDoctrine()->getRepository('userBundle:Partida')->find($id);

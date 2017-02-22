@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="col-md-12">
 			<div class="page-header margin-none">
-				<h2 class="padding-none">Partidas</h2>
+				<h2 class="padding-none">{% trans %} Games {% endtrans %}</h2>
 			</div>
 			<div class="table-responsive">
 				<p>
@@ -42,10 +42,10 @@
 				        {% endfor %}
 					</tbody>
 				</table>
-			{# display navigation #}
-			<div class="navigation">
-			    {{ knp_pagination_render(pagination) }}
-			</div>
+				{# display navigation #}
+				<div class="navigation">
+				    {{ knp_pagination_render(pagination) }}
+				</div>
 			</div>
 		</div>
 	</div>

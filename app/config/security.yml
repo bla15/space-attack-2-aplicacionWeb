@@ -44,4 +44,15 @@ security:
         userBundle\Entity\User:
             algorithm: bcrypt
             cost: 12
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/$, roles: IS_AUTHENTICATED_FULLY }
+        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/partida/index, roles: ROLE_ADMIN }
+        - { path: ^/partida/add, roles: ROLE_ADMIN }
+        - { path: ^/partida/edit, roles: ROLE_ADMIN }
+        - { path: ^/partida/view, roles: [ROLE_ADMIN, ROLE_USER] }
+        - { path: ^/partida/delete, roles: ROLE_ADMIN }
+        - { path: ^/partida/custom, roles: ROLE_USER }      
             

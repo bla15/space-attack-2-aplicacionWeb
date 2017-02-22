@@ -36,6 +36,10 @@ partida_redirect_add:
         path: /add
         permanent: true
 
+partida_custom:
+    path:     /custom
+    defaults: { _controller: userBundle:Partida:custom }
+
 partida_redirect_edit:
     path: /update/{id}
     defaults:
