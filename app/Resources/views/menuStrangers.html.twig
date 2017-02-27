@@ -1,0 +1,46 @@
+<header>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+		<div class="container">
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegation-fm">
+					<span class="sr-only">{% trans %} Draw/Hide {% endtrans %}</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{{ path('user_homeForStrangers') }}">Space Attack </a>
+			</div>
+
+			<!--Inicio menu-->
+			<div class="collapse navbar-collapse" id="navegation-fm">
+				<ul class="nav navbar-nav">
+					<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
+					<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
+					<li class="dropdown" role="menu">
+						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+	                        <li><a href="#">{% trans %} Planets {% endtrans %}</a></li>
+	                        <li class="divider"></li>
+	                        <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
+                    	</ul>
+
+					</li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">{% trans %} Sign in {% endtrans %}</a></li>
+					<li><a href="#">{% trans %} Sign up {% endtrans %}</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+<section class="jumbottron">
+	<div class="container">
+		<h1 class="titulo-pagina">Space Attack</h1>
+		<p>Pagina web del juego Space attack</p>
+	</div>
+</section>

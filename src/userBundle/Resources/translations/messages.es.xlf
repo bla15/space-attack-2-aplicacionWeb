@@ -269,7 +269,71 @@
             <trans-unit id="67">
                 <source>Games</source>
                 <target>Partidas</target>
-            </trans-unit>                                       
+            </trans-unit>
+            <trans-unit id="68">
+                <source>Draw/Hide</source>
+                <target>Mostrar/Ocultar</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>Start</source>
+                <target>Inico</target>
+            </trans-unit>
+            <trans-unit id="70">
+                <source>Forum</source>
+                <target>Foro</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>History</source>
+                <target>Historia</target>
+            </trans-unit>
+            <trans-unit id="72">
+                <source>Sign in</source>
+                <target>Inicia sesion</target>
+            </trans-unit>
+            <trans-unit id="73">
+                <source>Sign up</source>
+                <target>Regístrate</target>
+            </trans-unit>
+            <trans-unit id="74">
+                <source>Planets</source>
+                <target>Planetas</target>
+            </trans-unit>
+            <trans-unit id="75">
+                <source>Enemies</source>
+                <target>Enemigos</target>
+            </trans-unit>
+            <trans-unit id="76">
+                <source>Our journey begins</source>
+                <target>Nuestro viaje comienza</target>
+            </trans-unit>
+            <trans-unit id="77">
+                <source>Our bridge</source>
+                <target>Nuestro puente de mando</target>
+            </trans-unit>
+            <trans-unit id="78">
+                <source>our fight</source>
+                <target>Nuestra lucha</target>
+            </trans-unit>
+            <trans-unit id="79">
+                <source>Our piloting</source>
+                <target>Nuestro pilotaje</target>
+            </trans-unit>
+            <trans-unit id="80">
+                <source>Our destiny</source>
+                <target>Nuestro destino</target>
+            </trans-unit>
+            <trans-unit id="81">
+                <source>Images of the game</source>
+                <target>Imagenes del juego</target>
+            </trans-unit>
+            <trans-unit id="82">
+                <source>Previous</source>
+                <target>Anterior</target>
+            </trans-unit> 
+            <trans-unit id="83">
+                <source>Next</source>
+                <target>Siguiente</target>
+            </trans-unit>                                      
         </body>
     </file>
 </xliff>

@@ -18,6 +18,12 @@ class UserController extends Controller
         return $this->render('userBundle:User:home.html.twig');
     }
 
+    public function homeForStrangersAction()
+    {
+        $user = new User();
+        return $this->render('userBundle:User:home.html.twig');
+    }
+
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
