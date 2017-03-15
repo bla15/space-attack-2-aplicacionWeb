@@ -94,4 +94,31 @@ class PartidaController extends Controller
             ->getForm();
     }
 
+    public function statisticsAction(Request $request)
+    {
+
+        $em       = $this->getDoctrine()->getManager();
+        $dql      = "SELECT p FROM userBundle:Partida p ORDER BY p.id DESC";
+        $partidas = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $partidas,
+            $request->query->getInt('page', 1),
+            3
+        );
+
+        $em2   = $this->getDoctrine()->getManager();
+        $query = $em2->createQuery('SELECT p  FROM userBundle:Partida p ORDER BY p.score DESC')
+            ->setMaxResults(1);
+
+        try {
+            $part = $query->getSingleResult();
+        } catch (\Doctrine\Orm\NoResultException $e) {
+            $part = null;
+        }
+
+        return $this->render('userBundle:Partida:statistics.html.twig', array('pagination' => $pagination, 'part' => $part));
+    }
+
 }

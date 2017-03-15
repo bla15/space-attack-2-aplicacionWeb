@@ -2,7 +2,6 @@
 
 namespace userBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -101,7 +100,7 @@ class Partida
 
     public function __construct()
     {
-        $this->planets = new ArrayCollection();
+        $this->isActive = true;
     }
 
     /**

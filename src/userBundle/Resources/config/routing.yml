@@ -8,7 +8,7 @@ partida_partida:
 
 # Autentication
 user_homepage:
-    path:     /
+    path:     /home
     defaults: { _controller: userBundle:User:home }
 
 user_login:
@@ -24,5 +24,5 @@ user_logout:
 
 # anonimous
 user_homeForStrangers:
-    path:     /home
+    path:     /home2
     defaults: { _controller: userBundle:User:home }

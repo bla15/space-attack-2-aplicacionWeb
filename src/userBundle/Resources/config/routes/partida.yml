@@ -46,3 +46,7 @@ partida_redirect_edit:
         _controller: userBundle:Partida:edit
         path: /edit/{id}
         permanent: true
+
+partida_statistics:
+    path:     /statistics
+    defaults: { _controller: userBundle:Partida:statistics }
