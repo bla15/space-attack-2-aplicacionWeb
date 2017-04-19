@@ -337,7 +337,19 @@
             <trans-unit id="84">
                 <source>Statistics</source>
                 <target>Estadisticas</target>
-            </trans-unit>                                      
+            </trans-unit>
+            <trans-unit id="85">
+                <source>Contact</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="86">
+                <source>Menu</source>
+                <target>Menu</target>
+            </trans-unit >
+            <trans-unit id="87">
+                <source>Download</source>
+                <target>Descarga</target>
+            </trans-unit >                                  
         </body>
     </file>
 </xliff>

@@ -20,7 +20,7 @@
 						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
 
 						<ul class="dropdown-menu">
-	                        <li><a href="#">{% trans %} Planets {% endtrans %}</a></li>
+	                        <li><a href="{{ path('user_planets') }}">{% trans %} Planets {% endtrans %}</a></li>
 	                        <li class="divider"></li>
 	                        <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
                     	</ul>
@@ -30,7 +30,7 @@
 
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="{{ path('user_login') }}">{% trans %} Sign in {% endtrans %}</a></li>
-					<li><a href="#">{% trans %} Sign up {% endtrans %}</a></li>
+					<li><a href="{{ path('user_add') }}">{% trans %} Sign up {% endtrans %}</a></li>
 				</ul>
 			</div>
 		</div>

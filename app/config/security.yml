@@ -48,7 +48,7 @@ security:
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/$, roles: IS_AUTHENTICATED_FULLY }
-        - { path: ^/user, roles: ROLE_ADMIN }
+        - { path: ^/user/add, roles: ROLE_ADMIN }
         - { path: ^/partida/index, roles: ROLE_ADMIN }
         - { path: ^/partida/add, roles: ROLE_ADMIN }
         - { path: ^/partida/edit, roles: ROLE_ADMIN }

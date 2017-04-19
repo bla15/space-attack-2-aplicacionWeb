@@ -25,7 +25,54 @@
             {% endif %}
         {% endblock %}
 
-        {% block javascripts %}
+       
+
+        <footer>
+            {% block footer %}
+                <div class="container hidden-xs hidden-sm ">
+                    <div class="row">
+                        <div class="col-xs-6">
+                             <br>
+                            <h3>Borja López - Space Attack</h3>
+                                                <br>
+                            <p class="hidden-md"> Praesent finibus, risus mollis consequat venenatis, orci leo porttitor justo, eget molestie nulla ligula in urna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec ullamcorper odio in ligula scelerisque, vel finibus est tincidunt. Sed quis justo et elit euismod mollis. Cras molestie velit eget luctus tempus. Nunc mauris erat, dictum vel dignissim vitae, efficitur sed ante. Nulla ullamcorper rutrum.</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <ul class="list-inline text-right">
+                                <li><a href="{{ path('user_homepage') }}">{% trans %} Start {% endtrans %}</a></li>
+
+                                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                    <li><a href="{{ path('user_logout') }}">{% trans %} Logout {% endtrans %}</a></li>
+                                {% else %}
+                                    <li><a href="{{ path('user_login') }}">{% trans %} Sign in {% endtrans %}</a></li>
+                                {% endif %}
+                            </ul>
+                             <hr>
+                            <h3>{% trans %} Contact {% endtrans %}</h3>
+                             <div class="row text-right hidden-md">
+                               
+                                
+                             
+                                <br />
+                                <div class="col-xs-3">
+                                    <section id="rede-s">
+                                        <div class="email"> <a href="borja.lopezalonso@opendeusto.es"></a></div>
+                                    </section>
+                                </div>
+                                <div class="col-xs-3 pull-right">
+                                    <section id="rede-s">
+                                        <div class="facebook"> <a href="https://www.facebook.com/UDeusto/"></a></div>
+                                    </section>
+                                </div>
+                             </div>
+   
+                        </div>
+                    </div>
+                </div>
+            {% endblock %}
+        </footer>
+
+         {% block javascripts %}
             <script src="{{ asset('public/js/jquery-3.1.1.min.js') }}"></script>
             <script src="{{ asset('public/js/bootstrap.min.js') }}"></script>
             <script src="{{ asset('public/js/bootbox.min.js') }}"></script>

@@ -8,11 +8,16 @@ user_index:
 
 user_add_admin:
   path: /add/admin
-  defaults: { _controller: userBundle:User:add }
+  defaults: { _controller: userBundle:User:addAdmin }
 
 user_create:
   path: /create
   defaults: { _controller: userBundle:User:create }
+  methods: POST
+
+user_create_admin:
+  path: /createAdmin
+  defaults: { _controller: userBundle:User:createAdmin }
   methods: POST
 
 user_edit:

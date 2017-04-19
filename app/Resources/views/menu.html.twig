@@ -1,78 +1,83 @@
+
 <header>
 	<nav class="navbar navbar-inverse">
-	<div class="container-fluid container">
+		<div class="container-fluid container">
 
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ path('user_homepage') }}">Space Attack </a>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+	            </button>
+	            <a class="navbar-brand" href="{{ path('user_homepage') }}">Space Attack </a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+
+				{% if is_granted('ROLE_ADMIN') %}
+					<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
+					<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
+					<li class="dropdown" role="menu">
+						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+		                	<li><a href="{{ path('user_planets') }}">{% trans %} Planets {% endtrans %}</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
+	                    </ul>
+
+					</li>
+					
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans %} Users {% endtrans %} <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+	                        <li><a href="{{ path('user_index') }}">{% trans %} List users {% endtrans %}</a></li>
+	                        <li><a href="{{ path('user_add_admin') }}">{% trans %} New user {% endtrans %}</a></li>
+	                    </ul>
+					</li>
+
+					 <li class="dropdown">
+	                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {% trans %} Partidas {% endtrans %}  <span class="caret"></span></a>
+	                    <ul class="dropdown-menu">
+	                        <li><a href="{{ path('partida_index') }}"> {% trans %} List games {% endtrans %} </a></li>
+	                        <li><a href="{{ path('partida_statistics') }}">{% trans %} Statistics {% endtrans %}</a></li>
+	                    </ul>
+	                </li>
+	                 {% endif %}
+
+	            {% if is_granted('ROLE_USER') %}
+					<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
+					<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
+					<li class="dropdown" role="menu">
+						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
+
+						<ul class="dropdown-menu">
+		                	<li><a href="{{ path('user_planets') }}">{% trans %} Planets {% endtrans %}</a></li>
+		                    <li class="divider"></li>
+		                    <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
+	                    </ul>
+
+					</li>
+
+					<li><a href="{{ path('partida_custom') }}">{% trans %} My games {% endtrans %} </a></li>
+	               <li><a href="{{ path('partida_statistics') }}">{% trans %} Statistics {% endtrans %}</a></li>
+	            {% endif %}
+
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+				 	<li>
+				 		<a class="descarga"href="https://mega.nz/#!p3JgXYAb!d3zFBUhGAiq23Yirz94BrU5pLFD4KDEAwjkYFOXFClc">{% trans %} Download {% endtrans %}</a>
+				 	</li>
+	                <li>
+	                    <a href="{{ path('user_logout') }}">{{ 'Logout'|trans }}</a>
+	                   
+	                </li>
+	            </ul>
+			</div>
+
 		</div>
-
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-
-			{% if is_granted('ROLE_ADMIN') %}
-				<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
-				<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
-				<li class="dropdown" role="menu">
-					<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
-
-					<ul class="dropdown-menu">
-	                	<li><a href="#">{% trans %} Planets {% endtrans %}</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
-                    </ul>
-
-				</li>
-				
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% trans %} Users {% endtrans %} <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-                        <li><a href="{{ path('user_index') }}">{% trans %} List users {% endtrans %}</a></li>
-                        <li><a href="{{ path('user_add_admin') }}">{% trans %} New user {% endtrans %}</a></li>
-                    </ul>
-				</li>
-
-				 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {% trans %} Partidas {% endtrans %}  <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="{{ path('partida_index') }}"> {% trans %} List games {% endtrans %} </a></li>
-                        <li><a href="{{ path('partida_statistics') }}">{% trans %} Statistics {% endtrans %}</a></li>
-                    </ul>
-                </li>
-                 {% endif %}
-
-            {% if is_granted('ROLE_USER') %}
-				<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
-				<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
-				<li class="dropdown" role="menu">
-					<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
-
-					<ul class="dropdown-menu">
-	                	<li><a href="#">{% trans %} Planets {% endtrans %}</a></li>
-	                    <li class="divider"></li>
-	                    <li><a href="#">{% trans %} Enemies {% endtrans %}</a></li>
-                    </ul>
-
-				</li>
-
-				<li><a href="{{ path('partida_custom') }}">{% trans %} My games {% endtrans %} </a></li>
-               <li><a href="{{ path('partida_statistics') }}">{% trans %} Statistics {% endtrans %}</a></li>
-            {% endif %}
-
-			</ul>
-
-			 <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ path('user_logout') }}">{{ 'Logout'|trans }}</a>
-                </li>
-            </ul>
-		</div>
-
-	</div>
-</nav>
+	</nav>
 </header>

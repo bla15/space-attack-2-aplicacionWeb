@@ -22,6 +22,16 @@ user_login_check:
 user_logout:
     path:     /logout
 
+#registros de nuevos jugadores
+user_add:
+  path: /add
+  defaults: { _controller: userBundle:User:add }
+  
+# planetas
+user_planets:
+    path:     /planets
+    defaults: { _controller: userBundle:User:planets }
+
 # anonimous
 user_homeForStrangers:
     path:     /home2
