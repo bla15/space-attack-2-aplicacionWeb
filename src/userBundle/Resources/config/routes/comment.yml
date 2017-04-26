@@ -3,10 +3,15 @@ comment_index:
     defaults: { _controller: userBundle:Comment:index }
 
 comment_add:
-    path:     /add
+    path:     /add/{id}
     defaults: { _controller: userBundle:Comment:add }
 
 comment_create:
     path:     /create
     defaults: { _controller: userBundle:Comment:create }
     methods:  POST
+   
+
+comment_view:
+    path:     /view/{id}
+    defaults: { _controller: userBundle:Comment:view }

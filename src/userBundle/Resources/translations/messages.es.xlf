@@ -457,7 +457,11 @@
             <trans-unit id="114">
                 <source>Index</source>
                 <target>Índice</target>
-            </trans-unit>                                       
+            </trans-unit>
+            <trans-unit id="115">
+                <source>The comment has been created</source>
+                <target>El comentario ha sido creado</target>
+            </trans-unit>                                      
         </body>
     </file>
 </xliff>

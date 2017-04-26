@@ -100,6 +100,13 @@ body div.container.well div.row  div.vcenter{
 	margin-bottom: 10px;
 	font-size: 150%;
 }
+/* Referente a los comentarios*/
+body div.main.container div.row.well div.row  div.vcenter{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 150%;
+	color:#AE3030;
+}
 
 /* tablas */
 body tbody{

@@ -112,7 +112,7 @@ class ForoController extends Controller
             'action' => $this->generateUrl('foro_create'),
             'method' => 'POST'
         ));
-        
+            
         return $form;
     }
     public function createAction(Request $request)

@@ -80,7 +80,7 @@
              {% endif %}
              {% if foro.status == 0 %}
              <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right vcenter  ">
-                <a href="{{ path('foro_add') }}" class="btn btn-success btn-lg">{{ 'New entry'|trans }}</a>
+                <a href="{{ path('comment_add', {id: foro.id}) }}" class="btn btn-success btn-lg">{{ 'New entry'|trans }}</a>
             </div>
             {% endif %}
            	

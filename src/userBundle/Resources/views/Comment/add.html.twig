@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6">
+				<div class="page-header">
+					<div  class="text-center">
+						<h1>{{ foro.title }}</h1>
+					</div>
+					
+					<h2>{% trans %} New comment  {% endtrans %}</h2>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-4  text-center   ">
+						<h3>{% trans %} User name:  {% endtrans %}</h3>
+					 
+					</div>
+					<div class="col-md-3 col-sm-3 col-xs-3  text-left vcenter  ">
+					    	<p> {{user.nick}}</p>
+					</div>
+				</div>
+				
+				{{ form_start(form, { 'attr' : {'novalidate' : 'novalidate', 'role' : 'form'} }) }}
+					<fieldset>
+					    <div class="form-group">
+					    	
+					    	
+					        {{ form_label(form.description) }}
+					        {{ form_widget(form.description,  {'attr': {'class': 'form-control', 'placeholder' : 'Comment description'}}) }}
+					         <span class="text-danger">{{ form_errors(form.description) }}</span>
+					    </div>
+					</fieldset>
+
+				    <p>
+				        {{ form_widget(form.save, {'label' : 'Create comment', 'attr': {'class': 'btn btn-success'}}) }}
+				    </p>
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}
