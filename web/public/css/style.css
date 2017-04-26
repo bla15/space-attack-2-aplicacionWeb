@@ -12,6 +12,9 @@ body {
 	background-attachment: fixed;
 	background-position:0 0px;
 }
+body h1{
+	color:#fff;
+}
 body h2{
 	color:#fff;
 }
@@ -86,6 +89,18 @@ body section.main.container div.row article.post.clearfix p span.post-fecha{
 body section.main.container div.row article.post.clearfix p.post-contenido.text-justify{
 	color:#fff;
 }
+/* Referente al foro*/
+body section.main.container div.container-fluid div.row div.vcenter{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 150%;
+}
+body div.container.well div.row  div.vcenter{
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 150%;
+}
+
 /* tablas */
 body tbody{
 	position: relative;

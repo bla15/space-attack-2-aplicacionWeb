@@ -98,6 +98,7 @@ class Partida
      */
     private $updatedAt;
 
+   
     public function __construct()
     {
         $this->isActive = true;

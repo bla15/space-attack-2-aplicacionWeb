@@ -349,7 +349,115 @@
             <trans-unit id="87">
                 <source>Download</source>
                 <target>Descarga</target>
-            </trans-unit >                                  
+            </trans-unit >
+            <trans-unit id="88">
+                <source>Forum zone</source>
+                <target>Zona de foro</target>
+            </trans-unit >
+            <trans-unit id="89">
+                <source>New entry</source>
+                <target>Nueva entrada</target>
+            </trans-unit >
+            <trans-unit id="90">
+                <source>New topic</source>
+                <target>Nuevo tema</target>
+            </trans-unit > 
+            <trans-unit id="91">
+                <source>Title</source>
+                <target>Titulo</target>
+            </trans-unit >
+            <trans-unit id="92">
+                <source>Topic title</source>
+                <target>Titulo del tema</target>
+            </trans-unit >  
+            <trans-unit id="93">
+                <source>Description</source>
+                <target>Descripcion</target>
+            </trans-unit >  
+            <trans-unit id="94">
+                <source>Topic description</source>
+                <target>Descripcion del tema</target>
+            </trans-unit >
+            <trans-unit id="95">
+                <source>Create topic</source>
+                <target>Crear tema</target>
+            </trans-unit>
+            <trans-unit id="96">
+                <source>The topic has been created.</source>
+                <target>El tema fue creado</target>
+            </trans-unit>
+            <trans-unit id="97">
+                <source>Topics</source>
+                <target>Temas</target>
+            </trans-unit>
+            <trans-unit id="98">
+                <source>Description</source>
+                <target>Descripcion</target>
+            </trans-unit> 
+            <trans-unit id="99">
+                <source>Created</source>
+                <target>Creados</target>
+            </trans-unit>
+            <trans-unit id="100">
+                <source>Coments</source>
+                <target>Comentarios</target>
+            </trans-unit>
+            <trans-unit id="101">
+                <source>Edit topic</source>
+                <target>Editar tema</target>
+            </trans-unit>
+            <trans-unit id="102">
+                <source>Topic not found.</source>
+                <target>Tema no encontrado.</target>
+            </trans-unit>
+            <trans-unit id="103">
+                <source>The topic has been modified</source>
+                <target>El tema ha sido modificado</target>
+            </trans-unit>
+            <trans-unit id="104">
+                <source>Administrator's actions</source>
+                <target>Acciones de administrador</target>
+            </trans-unit> 
+            <trans-unit id="105">
+                <source>Delete topic</source>
+                <target>Borrar tema</target>
+            </trans-unit>  
+            <trans-unit id="106">
+                <source>My topics</source>
+                <target>Mis temas</target>
+            </trans-unit> 
+            <trans-unit id="107">
+                <source>You dont have topics</source>
+                <target>Tu no tienes temas</target>
+            </trans-unit>
+            <trans-unit id="108">
+                <source>Finish</source>
+                <target>Acabar</target>
+            </trans-unit>
+            <trans-unit id="109">
+                <source>The topic has been processed.</source>
+                <target>La tarea ha sido dada por concluida.</target>
+            </trans-unit>
+            <trans-unit id="110">
+                <source>The topic was already finished.</source>
+                <target>El tema ya se habia dado por concluido.</target>
+            </trans-unit>  
+            <trans-unit id="111">
+                <source>This topic is closed</source>
+                <target>Este tema esta cerrado</target>
+            </trans-unit>
+            <trans-unit id="112">
+                <source>Types of planets</source>
+                <target>Tipos de planetas</target>
+            </trans-unit>
+            <trans-unit id="113">
+                <source>Planet</source>
+                <target>Planeta</target>
+            </trans-unit>
+            <trans-unit id="114">
+                <source>Index</source>
+                <target>Índice</target>
+            </trans-unit>                                       
         </body>
     </file>
 </xliff>

@@ -1,0 +1,53 @@
+foro_index:
+    path:     /index
+    defaults: { _controller: userBundle:Foro:index }
+
+foro_add:
+    path:     /add
+    defaults: { _controller: userBundle:Foro:add }
+
+foro_create:
+    path:     /create
+    defaults: { _controller: userBundle:Foro:create }
+    methods:  POST
+
+foro_edit:
+    path:     /edit/{id}
+    defaults: { _controller: userBundle:Foro:edit }
+
+foro_update:
+    path:     /update/{id}
+    defaults: { _controller: userBundle:Foro:update }
+    methods:  [POST, PUT]
+
+foro_view:
+    path:     /view/{id}
+    defaults: { _controller: userBundle:Foro:view }
+
+foro_delete:
+    path:     /foro/{id}
+    defaults: { _controller: userBundle:Foro:delete }
+    methods:  [POST, DELETE]
+
+foro_custom:
+    path:     /custom
+    defaults: { _controller: userBundle:Foro:custom }
+
+foro_process:
+    path:     /process/{id}
+    defaults: { _controller: userBundle:Foro:process }
+    methods:  [POST, PUT]
+
+foro_redirect_add:
+    path: /create
+    defaults:
+        _controller: userBundle:Foro:add
+        path: /add
+        permanent: true
+
+foro_redirect_edit:
+    path: /update/{id}
+    defaults:
+        _controller: userBundle:Foro:edit
+        path: /edit/{id}
+        permanent: true

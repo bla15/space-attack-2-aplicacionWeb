@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -23,6 +24,18 @@ class User implements AdvancedUserInterface, \Serializable
      */
 
     protected $partidas;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Foro", mappedBy="user")
+     */
+
+    protected $foros;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Comment", mappedBy="user")
+     */
+
+    protected $comments;
 
     /**
      * @var integer
@@ -107,6 +120,9 @@ class User implements AdvancedUserInterface, \Serializable
     {
 
         $this->isActive = true;
+        $this->foros = new ArrayCollection();
+        $this->comments = new ArrayCollection();
+
     }
 
     /**
@@ -434,5 +450,89 @@ class User implements AdvancedUserInterface, \Serializable
     public function isEnabled()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Add partida
+     *
+     * @param \userBundle\Entity\Partida $partida
+     *
+     * @return User
+     */
+    public function addPartida(\userBundle\Entity\Partida $partida)
+    {
+        $this->partidas[] = $partida;
+
+        return $this;
+    }
+
+    /**
+     * Add foro
+     *
+     * @param \userBundle\Entity\Foro $foro
+     *
+     * @return User
+     */
+    public function addForo(\userBundle\Entity\Foro $foro)
+    {
+        $this->foros[] = $foro;
+
+        return $this;
+    }
+
+    /**
+     * Remove foro
+     *
+     * @param \userBundle\Entity\Foro $foro
+     */
+    public function removeForo(\userBundle\Entity\Foro $foro)
+    {
+        $this->foros->removeElement($foro);
+    }
+
+    /**
+     * Get foros
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getForos()
+    {
+        return $this->foros;
+    }
+
+    
+
+    /**
+     * Add comment
+     *
+     * @param \userBundle\Entity\Comment $comment
+     *
+     * @return User
+     */
+    public function addComment(\userBundle\Entity\Comment $comment)
+    {
+        $this->comments[] = $comment;
+
+        return $this;
+    }
+
+    /**
+     * Remove comment
+     *
+     * @param \userBundle\Entity\Comment $comment
+     */
+    public function removeComment(\userBundle\Entity\Comment $comment)
+    {
+        $this->comments->removeElement($comment);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

@@ -54,5 +54,8 @@ security:
         - { path: ^/partida/edit, roles: ROLE_ADMIN }
         - { path: ^/partida/view, roles: [ROLE_ADMIN, ROLE_USER] }
         - { path: ^/partida/delete, roles: ROLE_ADMIN }
-        - { path: ^/partida/custom, roles: ROLE_USER }      
+        - { path: ^/partida/custom, roles: ROLE_USER }
+      
+        
+
             

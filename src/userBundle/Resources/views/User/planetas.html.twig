@@ -1,0 +1,116 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('public/css/signin.css') }}">
+{% endblock %}
+
+{% block body %}
+<!--Inicio menu-->
+	{{ parent() }}
+	<div class="container">
+		<br>
+		<h1>{% trans %} Types of planets  {% endtrans %}</h1>
+
+		<section class="main row">
+			
+
+
+			<aside class="visible-lg visible-md col-xs-12 col-sm-4 col-md-3">
+				
+			</aside>
+
+		</section>
+
+		<section class="main container">
+			<div class="row">
+            <section class="posts col-md-9">
+            	<article class="post clearfix">
+                    <h2>{% trans %} Introduction {% endtrans %}</h2>
+                    <p class="post-contenido text-justify">
+                    En este apartado de la aplicacion se realizara una explicacion sobre la historia de cada uno de los planetas. Estos planetas son los denominados niveles del juego y hay 6 en total. Cada unode los planetas esta mas cerca del sistema solar y por ello mas cerca de la tierra. Las explicaciones van en orden cronologico, siendo el primer planeta el planeta que antes vemos en la aventura.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Tumbr.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Tumbr">Tumbr</h2>
+                    <p class="post-contenido text-justify">
+                    Tumbr es el primer planeta que vemos en nuesra aventura. Este planeta se caracteriza porque esta muy cerca de una nuve de miasma radiactiva de origen desconocido. Esta miasma a cambiado el clima del planeta haciendolo altamente radiactivo. Los tumberitas han conseguido adaptarse a esta radiaccion gracias a un caparazon de adamantium. Su sociedad se caracteriza por tener altos niveles de criminalidad, seguramente al saltar a su sistema solar tendremos que enfrentarnos a alguna que otra flota de estos criminales. La vida en el planeta para los humanos solo es posible bajo tierra a unos 40 metros de media.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Axion.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Axion">Axion</h2>
+                    <p class="post-contenido text-justify">
+                    Axiom se encuentra en un sistema solar peculiar, este sistema solar se caracteriza por el poder luminoso de su super nova. Esta super estrella desprende gran calor y es visible desde millones de kilometros de distancia. En este sistema solar solo es posible la vida en Axion debido al gran calor desprendido por la estralla. La temperatura media del planeta oscila entre 40 y 60 grados dependiendo de la noche y el dia. La vida para los humanos soloes posible a cierta profundidad debido a las temperaturas y a la radiacion solar.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Blor.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Blor">Blor</h2>
+                    <p class="post-contenido text-justify">
+                    Blor al contrario de lo que ocurria en Axion, el sistema solar se caracteriza por la pequeña estrella que tienen por sol. Esta estrella aporta muy poca luminosidad y muy poco calor a los planetas que rotan a su alrededor. La temperatura de Blor es de -20 grados celsius. La vida en este planeta es posible siempre que no se aleje la colonia en mas de 400 kilometros del ecuador. En el sistema hay otros dos planetas ocupado por los bloritas, estos planetas son Blortiposc y Arrungatum, ambos con temperaturas muy inferiores a las de Blor.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Hell.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Hell">Hell</h2>
+                    <p class="post-contenido text-justify">
+                    De el sistema solar de Hell poco o nada se conoce de el debido a la alta hostilidad que muestra esta raza. El 80% de las sondas enviadas han sido destruidos, de ese 80% el 70% ha sido eliminado antes de iniciar la transmision de datos y el 30% restante ha sido pirateado y eliminado. Se deben extremar las precauciones al saltar a este sistema solar, lo mas probalble es que entablemos contacto con grandes cantidades de enemigos hostiles. La vida en cualquiera de los planetas se desconoce si es posible, se descartan los planetas mas alejados y cercanos al sol por razones obias. Hell se encuentra situada a una distancia equivalente a la que hay entre el sol y la tierra.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Shadow.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Shadow">Shadow</h2>
+                    <p class="post-contenido text-justify">
+                    Shadow se encuentra en un sitema solar en el que hay gran cantidad de carga electrica generada por su estrella nova de primer grado. Se desconoce si hay vida inteligente debido a que solo existe el palneta Shadow en todo el sistema. El planeta tiene gran cantidad de hierro en su superficie, la temperatura media es de 200 grados y desde el espacio se pueden ver corrientes de lava. La vida humana es imposible en este entorno, no hay atmosfera ni agua.
+                    </p>
+                </article>
+                <article class="post clearfix">
+                    <a href="#" class="thumb pull-left">
+                        <img src="{{ asset('public/images/planets/Logic.jpg') }}" alt="">
+                    </a>
+                    <h2 class="post-title" id="Logic">Logic</h2>
+                    <p class="post-contenido text-justify">
+                    Logic no sabemos lo que es, pero no es un sistema o por lo menos ya no lo es. Ahora es un enorme agujero negro que hace millones de años se trago los planteas que rodeaban a su sol. En el centro de este agujero negro parece haber una especie de mega estructura de tamaño equivalente a un satelite de un planeta. Desconocemos como esto es posible debido a que por la fuerza que ejerce el agujero negro no podemos acercarnos para analizar el suceso. Desconocemos que nos encontraremos al saltar al sistema de Logic.
+                    </p>
+                </article>
+             </section>
+
+            <aside class="col-md-3 hidden-xs hidden-sm">
+                <h3>Redes sociales</h3>
+                <section id="twitter">
+                    <a class="twitter-timeline"  href="https://twitter.com/hashtag/spaceinvaders" data-widget-id="841991144099725312">Tweets sobre #spaceinvaders</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </section>
+                <h2>{% trans %} Index {% endtrans %}</h2>
+				
+					<ul class="nav nav-pills nav-stacked">
+					<li role="presentation"><a id="item1" href="#Tumbr">{% trans %} Planet {% endtrans %} Tumblr</a></li>
+					<li role="presentation"><a id="item1" href="#Axion">{% trans %} Planet {% endtrans %} Axion</a></li>
+					<li role="presentation"><a id="item1" href="#Blor">{% trans %} Planet {% endtrans %} Blor</a></li>
+					<li role="presentation"><a id="item1" href="#Hell">{% trans %} Planet {% endtrans %} Hell</a></li>
+					<li role="presentation"><a id="item1" href="#Shadow">{% trans %} Planet {% endtrans %} Shadow</a></li>
+					<li role="presentation"><a id="item1" href="#Logic">{% trans %} Planet {% endtrans %} Logic</a></li>
+					</ul>
+            </aside> 
+
+         </div>
+		</section>
+	</div>
+	 <script>
+
+    
+	 </script>
+	
+{% endblock %}

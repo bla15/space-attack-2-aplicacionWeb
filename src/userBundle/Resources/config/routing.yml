@@ -6,6 +6,14 @@ partida_partida:
     resource: "@userBundle/Resources/config/routes/partida.yml"
     prefix:   /partida
 
+foro_foro:
+    resource: "@userBundle/Resources/config/routes/foro.yml"
+    prefix:   /foro
+
+comment:comment:
+    resource: "@userBundle/Resources/config/routes/comment.yml"
+    prefix:   /comment
+
 # Autentication
 user_homepage:
     path:     /home

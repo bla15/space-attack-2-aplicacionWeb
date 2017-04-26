@@ -18,7 +18,7 @@
 
 				{% if is_granted('ROLE_ADMIN') %}
 					<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
-					<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
+					<li><a href="{{ path('foro_index') }}">{% trans %} Forum {% endtrans %}</a></li>
 					<li class="dropdown" role="menu">
 						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
 
@@ -49,7 +49,7 @@
 
 	            {% if is_granted('ROLE_USER') %}
 					<li><a href="#">{% trans %} Start {% endtrans %}</a></li>
-					<li><a href="#">{% trans %} Forum {% endtrans %}</a></li>
+					<li><a href="{{ path('foro_index') }}">{% trans %} Forum {% endtrans %}</a></li>
 					<li class="dropdown" role="menu">
 						<a href="#" class="dropdown-toggel" data-toggle="dropdown" role="button">{% trans %} History {% endtrans %} <span class="caret"></span></a>
 

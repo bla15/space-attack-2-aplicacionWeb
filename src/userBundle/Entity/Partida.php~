@@ -2,7 +2,6 @@
 
 namespace userBundle\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -13,10 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Partida
 {
-    /**
-     * @ORM\OneToMany(targetEntity="Planet", mappedBy="partida")
-     */
-    protected $planets;
 
     /**
      * @ORM\ManyToOne(targetEntity="User", inversedBy="partidas")
@@ -103,9 +98,10 @@ class Partida
      */
     private $updatedAt;
 
+   
     public function __construct()
     {
-        $this->planets = new ArrayCollection();
+        $this->isActive = true;
     }
 
     /**
@@ -380,5 +376,39 @@ class Partida
     public function getUser()
     {
         return $this->user;
+    }
+
+    /**
+     * Add planet
+     *
+     * @param \userBundle\Entity\Planet $planet
+     *
+     * @return Partida
+     */
+    public function addPlanet(\userBundle\Entity\Planet $planet)
+    {
+        $this->planets[] = $planet;
+
+        return $this;
+    }
+
+    /**
+     * Remove planet
+     *
+     * @param \userBundle\Entity\Planet $planet
+     */
+    public function removePlanet(\userBundle\Entity\Planet $planet)
+    {
+        $this->planets->removeElement($planet);
+    }
+
+    /**
+     * Get planets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPlanets()
+    {
+        return $this->planets;
     }
 }

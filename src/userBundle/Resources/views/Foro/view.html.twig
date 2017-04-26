@@ -1,0 +1,92 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="container well">
+	    <div class="col-md-9">
+		    <h2>{{ foro.title }}</h2>
+		        <br>
+		        <dl>
+		            <dt>{% trans %} Description {% endtrans %}</dt>
+		            <dd>
+		                {{ foro.description }}
+		                &nbsp;
+		            </dd>
+		            <br>
+
+		            <dt>{% trans %} User {% endtrans %}</dt>
+		            <dd>
+		                {{ user.fullName }}
+		                &nbsp;
+		            </dd>
+		            <br>
+
+		            <dt>{% trans %} Status {% endtrans %}</dt>
+		            <dd>
+	                	{% if foro.status == 0 %}
+	                	    <span class="text-danger">Waiting</span>
+	                	{% elseif foro.status == 1 %}
+	                	    <span class="text-success">Finish</span>
+	                	{% endif %}
+		                &nbsp;
+		            </dd>
+		            <br>
+
+		            <dt>{% trans %} Created {% endtrans %}</dt>
+		            <dd>
+		                {{ foro.createdAt|date('d-m-Y H:i') }}
+		                &nbsp;
+		            </dd>
+		            <br>
+
+		            <dt>{% trans %} Updated {% endtrans %}</dt>
+		            <dd>
+		                {{ foro.updatedAt|date('d-m-Y H:i') }}
+		                &nbsp;
+		            </dd>
+		            <br>
+		        </dl>
+	    </div>
+	    <div class="col-md-3">
+	    	{% if user.id==userTopic.id %}
+		    	<h3>{% trans %} Actions {% endtrans %}</h3>
+		    	<p>
+		         	<a href="{{ path('foro_edit', {id: foro.id}) }}" class="btn btn-primary btn-lg btn-block">
+		                <span class="glyphicon glyphicon-edit"></span>
+		                {% trans %} Edit topic {% endtrans %}
+		            </a>
+		        </p>
+	    	{% endif %}
+			{% if is_granted('ROLE_ADMIN') %}
+		        <h3>{% trans %} Administrator's actions {% endtrans %}</h3>
+		        <p>
+		            {{ include('userBundle:Foro:forms/form.html.twig', { form: delete_form	, message: 'Are you sure ?' }) }}
+		        </p> 
+	    	{% endif %}
+	    </div>
+	    
+	</div>
+
+	<div class="container well">
+	    <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+                 <h2>{% trans %} Coments {% endtrans %}</h2>
+             </div>
+             {% if foro.status == 1 %}
+             <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right ">
+             	<h3>{% trans %} This topic is closed {% endtrans %}</h3>
+             </div>
+             
+             {% endif %}
+             {% if foro.status == 0 %}
+             <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right vcenter  ">
+                <a href="{{ path('foro_add') }}" class="btn btn-success btn-lg">{{ 'New entry'|trans }}</a>
+            </div>
+            {% endif %}
+           	
+	    </div>
+	</div>
+{% endblock %}
+
+
+	
