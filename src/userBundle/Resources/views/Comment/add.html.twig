@@ -7,7 +7,7 @@
 			<div class="col-md-6">
 				<div class="page-header">
 					<div  class="text-center">
-						<h1>{{ foro.title }}</h1>
+						<h1>{{ comment.foro.title }}</h1>
 					</div>
 					
 					<h2>{% trans %} New comment  {% endtrans %}</h2>
@@ -18,26 +18,12 @@
 					 
 					</div>
 					<div class="col-md-3 col-sm-3 col-xs-3  text-left vcenter  ">
-					    	<p> {{user.nick}}</p>
+					    	<p> {{comment.user.nick}}</p>
 					</div>
 				</div>
 				
-				{{ form_start(form, { 'attr' : {'novalidate' : 'novalidate', 'role' : 'form'} }) }}
-					<fieldset>
-					    <div class="form-group">
-					    	
-					    	
-					        {{ form_label(form.description) }}
-					        {{ form_widget(form.description,  {'attr': {'class': 'form-control', 'placeholder' : 'Comment description'}}) }}
-					         <span class="text-danger">{{ form_errors(form.description) }}</span>
-					    </div>
-					</fieldset>
-
-				    <p>
-				        {{ form_widget(form.save, {'label' : 'Create comment', 'attr': {'class': 'btn btn-success'}}) }}
-				    </p>
-
-				{{ form_end(form) }}
+				{% include 'userBundle:Comment:form.html.twig' with { 'form': form } %}
+				
 			</div>
 		</div>
 	</div>

@@ -40,6 +40,11 @@ user_planets:
     path:     /planets
     defaults: { _controller: userBundle:User:planets }
 
+# enemys
+user_enemies:
+    path:     /enemies
+    defaults: { _controller: userBundle:User:enemies }
+
 # anonimous
 user_homeForStrangers:
     path:     /home2

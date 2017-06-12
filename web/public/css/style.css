@@ -145,6 +145,10 @@ body .well{
 body .well dd{
 	color: #AE3030;
 }
+/*--Comentarios-- */
+body div.container div.col-md-12 div.table-responsive div.row p.fecha{
+	color: #AE3030;
+}
 /*--FOOTER-- */
 body footer{
 	background-color: rgba(34,34,34,.7);

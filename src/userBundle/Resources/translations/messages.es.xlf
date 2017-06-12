@@ -383,7 +383,7 @@
                 <target>Crear tema</target>
             </trans-unit>
             <trans-unit id="96">
-                <source>The topic has been created.</source>
+                <source>The topic has been created</source>
                 <target>El tema fue creado</target>
             </trans-unit>
             <trans-unit id="97">
@@ -461,7 +461,71 @@
             <trans-unit id="115">
                 <source>The comment has been created</source>
                 <target>El comentario ha sido creado</target>
-            </trans-unit>                                      
+            </trans-unit>
+            <trans-unit id="116">
+                <source>My comments</source>
+                <target>Mis comentarios</target>
+            </trans-unit>
+            <trans-unit id="117">
+                <source>You dont have coments</source>
+                <target>Tu no tienes comentarios</target>
+            </trans-unit>
+            <trans-unit id="118">
+                <source>Description</source>
+                <target>Descripcion</target>
+            </trans-unit>
+            <trans-unit id="119">
+                <source>Status</source>
+                <target>Estado</target>
+            </trans-unit>   
+            <trans-unit id="120">
+                <source>The comment has been deleted.</source>
+                <target>El comentarios ha sido eliminado.</target>
+            </trans-unit> 
+            <trans-unit id="121">
+                <source>Edit comment</source>
+                <target>Editar comentario</target>
+            </trans-unit>  
+            <trans-unit id="122">
+                <source>Comment not found</source>
+                <target>Comentario no encontrado</target>
+            </trans-unit>
+            <trans-unit id="123">
+                <source>Comment description</source>
+                <target>Descripcion del comentario</target>
+            </trans-unit> 
+            <trans-unit id="124">
+                <source>Create comment</source>
+                <target>Crear el comentario</target>
+            </trans-unit>
+            <trans-unit id="125">
+                <source>New comment</source>
+                <target>Nuevo comentario</target>
+            </trans-unit>  
+            <trans-unit id="126">
+                <source>User name</source>
+                <target>Nombre del usuario</target>
+            </trans-unit>
+            <trans-unit id="127">
+                <source>The comment has been modified</source>
+                <target>El comentario ha sido modificado</target>
+            </trans-unit>
+            <trans-unit id="128">
+                <source>There are no comments</source>
+                <target>No hay comentarios</target>
+            </trans-unit>
+            <trans-unit id="129">
+                <source>The topic has been deleted</source>
+                <target>El tema ha sido eliminado</target>
+            </trans-unit>
+            <trans-unit id="130">
+                <source>Enemy</source>
+                <target>Enemigo</target>
+            </trans-unit> 
+            <trans-unit id="131">
+                <source>Types of enemies</source>
+                <target>Tipos de enemigos </target>
+            </trans-unit>                              
         </body>
     </file>
 </xliff>

@@ -378,37 +378,5 @@ class Partida
         return $this->user;
     }
 
-    /**
-     * Add planet
-     *
-     * @param \userBundle\Entity\Planet $planet
-     *
-     * @return Partida
-     */
-    public function addPlanet(\userBundle\Entity\Planet $planet)
-    {
-        $this->planets[] = $planet;
-
-        return $this;
-    }
-
-    /**
-     * Remove planet
-     *
-     * @param \userBundle\Entity\Planet $planet
-     */
-    public function removePlanet(\userBundle\Entity\Planet $planet)
-    {
-        $this->planets->removeElement($planet);
-    }
-
-    /**
-     * Get planets
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getPlanets()
-    {
-        return $this->planets;
-    }
+    
 }

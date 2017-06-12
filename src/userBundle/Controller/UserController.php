@@ -29,6 +29,11 @@ class UserController extends Controller
         $user = new User();
         return $this->render('userBundle:User:planetas.html.twig');
     }
+    public function enemiesAction()
+    {
+        $user = new User();
+        return $this->render('userBundle:User:enemies.html.twig');
+    }
 
     public function indexAction(Request $request)
     {

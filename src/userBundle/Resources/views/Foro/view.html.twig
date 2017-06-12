@@ -70,21 +70,58 @@
 	<div class="container well">
 	    <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-6">
-                 <h2>{% trans %} Coments {% endtrans %}</h2>
-             </div>
-             {% if foro.status == 1 %}
-             <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right ">
-             	<h3>{% trans %} This topic is closed {% endtrans %}</h3>
-             </div>
-             
-             {% endif %}
-             {% if foro.status == 0 %}
-             <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right vcenter  ">
-                <a href="{{ path('comment_add', {id: foro.id}) }}" class="btn btn-success btn-lg">{{ 'New entry'|trans }}</a>
+                <h2>{% trans %} Coments {% endtrans %}</h2>
             </div>
+             {% if foro.status == 1 %}
+	            <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right ">
+	            	<h3>{% trans %} This topic is closed {% endtrans %}</h3>
+	            </div>
+             {% endif %}
+
+            {% if foro.status == 0 %}
+            	<div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right vcenter  ">
+            		<a href="{{ path('comment_add', {id: foro.id}) }}" class="btn btn-success btn-lg">{{ 'New comment'|trans }}</a>
+            	</div>
             {% endif %}
-           	
 	    </div>
+
+	    <div class="container">
+			<div class="col-md-12">
+				{% if not pagination|length %}
+					<h3>{% trans %} There are no comments{% endtrans %}</h3>
+				{% endif %}
+
+				{% if pagination|length %}
+					<div class="table-responsive">
+						<p>
+						    {{ 'Total records:'|trans }} <span id="total"> {{ pagination.getTotalItemCount }} </span>
+						</p>
+					
+		                    	{% for comment in pagination %}
+		                    	<div style="background-color: rgba(0, 0, 0, 0.9)">
+		                    		<div class="row " >
+			                        	<div class="col-md-6 col-sm-6 col-xs-6">
+							               <h3>{{ comment.user.nick }}</h3>
+							            </div>
+							             <div class="col-md-6 col-sm-6 col-xs-6 pull-right text-right vcenter">
+											<p class="fecha">{{ comment.createdAt|date('d-m-Y H:i') }}</p>
+			                        	</div>
+			                        </div>
+			                       	<div class="snippet">
+								        <p id="cuerpo">{{ comment.description(150) }}</p>
+								    </div>
+		                    	</div>
+									
+		                        {% endfor %}
+
+						{# display navigation #}
+						<div class="navigation">
+						    {{ knp_pagination_render(pagination) }}
+						</div>
+					</div>
+				{% endif %}
+			</div>
+		</div>
 	</div>
 {% endblock %}
 

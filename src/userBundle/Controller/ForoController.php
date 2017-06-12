@@ -9,6 +9,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use userBundle\Entity\Foro;
 use userBundle\Form\ForoType;
+use userBundle\Entity\Comment;
+use userBundle\Form\CommentType;
 
 class ForoController extends Controller
 {
@@ -68,7 +70,7 @@ class ForoController extends Controller
         if($form->isSubmitted() && $form->isValid())
         {
         	$successMessage = $this->get('translator')->trans('The topic has been processed.');
-            $warningMessage = $this->get('translator')->trans('The topic has already been processed.');
+
 
             if ($foro->getStatus() == 0)
             {
@@ -131,7 +133,7 @@ class ForoController extends Controller
             $em->persist($foro);
             $em->flush();
             
-            $successMessage = $this->get('translator')->trans('The topic has been created.');
+            $successMessage = $this->get('translator')->trans('The topic has been created');
             $this->addFlash('mensaje', $successMessage); 
             return $this->redirectToRoute('foro_index');
         }
@@ -139,7 +141,7 @@ class ForoController extends Controller
         return $this->render('userBundle:Foro:add.html.twig', array('form' => $form->createView()));
     }
 
-    public function viewAction($id)
+    public function viewAction($id, Request $request)
     {
     	$user = $this->container->get('security.context')->getToken()->getUser();
         $foro = $this->getDoctrine()->getRepository('userBundle:foro')->find($id);
@@ -150,8 +152,19 @@ class ForoController extends Controller
         $deleteForm = $this->createCustomForm($foro->getId(), 'DELETE', 'foro_delete'); 
 
         $userTopic = $foro->getUser();
+
+        $em = $this->getDoctrine()->getManager();
+        $dql = "SELECT c FROM userBundle:Comment c JOIN c.foro f WHERE f.id = :id ORDER BY c.id DESC";
+        $comments = $em->createQuery($dql)->setParameter('id' , $id);
+
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $comments,
+            $request->query->getInt('page', 1),
+            3
+        );
         
-        return $this->render('userBundle:Foro:view.html.twig', array('foro' => $foro, 'user' => $user, 'userTopic' => $userTopic, 'delete_form' => $deleteForm->createView()));
+        return $this->render('userBundle:Foro:view.html.twig', array('pagination' => $pagination,'foro' => $foro, 'user' => $user, 'userTopic' => $userTopic, 'delete_form' => $deleteForm->createView()));
     }
 
      public function editAction($id)
@@ -221,7 +234,8 @@ class ForoController extends Controller
             $em->remove($foro);
             $em->flush();
             
-            $this->addFlash('mensaje', 'The topic has been deleted');
+            $successMessage = $this->get('translator')->trans('The topic has been deleted');
+            $this->addFlash('mensaje', $successMessage); 
             
             return $this->redirectToRoute('foro_index');
         }

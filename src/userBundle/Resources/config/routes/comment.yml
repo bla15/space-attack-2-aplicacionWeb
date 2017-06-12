@@ -7,11 +7,37 @@ comment_add:
     defaults: { _controller: userBundle:Comment:add }
 
 comment_create:
-    path:     /create
+    path:     /create/{foro_id}
     defaults: { _controller: userBundle:Comment:create }
-    methods:  POST
-   
+    requirements:
+        _method: POST
+        foro_id: \d+
 
+comment_edit:
+    path:     /edit/{id}
+    defaults: { _controller: userBundle:Comment:edit }
+
+comment_update:
+    path:     /update/{id}
+    defaults: { _controller: userBundle:Comment:update }
+    methods:  [POST, PUT]
+   
 comment_view:
     path:     /view/{id}
     defaults: { _controller: userBundle:Comment:view }
+
+comment_custom:
+    path:     /custom
+    defaults: { _controller: userBundle:Comment:custom }
+
+comment_delete:
+    path:     /comment/delete/{id}
+    defaults: { _controller: userBundle:Comment:delete }
+    methods: [POST, DELETE]
+
+comment_redirect_edit:
+    path: /update/{id}
+    defaults:
+        _controller: userBundle:Comment:edit
+        path: /edit/{id}
+        permanent: true

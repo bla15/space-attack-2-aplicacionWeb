@@ -98,7 +98,7 @@ class PartidaController extends Controller
     {
 
         $em       = $this->getDoctrine()->getManager();
-        $dql      = "SELECT p FROM userBundle:Partida p ORDER BY p.id DESC";
+        $dql      = "SELECT p FROM userBundle:Partida p WHERE p.status = 1 ORDER BY p.score DESC";
         $partidas = $em->createQuery($dql);
 
         $paginator  = $this->get('knp_paginator');
@@ -109,7 +109,7 @@ class PartidaController extends Controller
         );
 
         $em2   = $this->getDoctrine()->getManager();
-        $query = $em2->createQuery('SELECT p  FROM userBundle:Partida p ORDER BY p.score DESC')
+        $query = $em2->createQuery('SELECT p  FROM userBundle:Partida p WHERE p.status = 1 ORDER BY p.score DESC')
             ->setMaxResults(1);
 
         try {

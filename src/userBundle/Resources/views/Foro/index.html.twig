@@ -20,6 +20,7 @@
                 
                 <div class="col-md-6 col-sm-6 col-xs-6  text-right vcenter  ">
                     <a href="{{ path ('foro_custom') }}" class="btn btn-warning btn-lg">{{ 'My topics'|trans }}</a>
+                    <a href="{{ path ('comment_custom') }}" class="btn btn-warning btn-lg">{{ 'My comments'|trans }}</a>
                     <a href="{{ path('foro_add') }}" class="btn btn-success btn-lg">{{ 'New entry'|trans }}</a>
 
                 </div>
@@ -51,7 +52,7 @@
                                     <a class="titulo" href="{{ path('foro_view', {id: foro.id}) }}">{{ foro.title }}</a>
                                 </td>
                                 <td>{{ foro.createdAt|date('d-m-Y H:i') }}</td>
-                                <td>{{ foro.user.fullName }}</td>
+                                <td>{{ foro.user.nick }}</td>
                                 <td>
                                     {% if foro.status == 0 %}
                                         <span class="glyphicon glyphicon-time text-danger" title="{% trans %}Waiting{% endtrans %}" id="glyphicon-{{foro.id}}"></span>
